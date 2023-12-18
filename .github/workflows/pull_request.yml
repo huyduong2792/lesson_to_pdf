@@ -45,5 +45,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
+          context: .
           push: true
-          tags: user/app:latest
+          tags: ${{ steps.meta.outputs.tags }}
