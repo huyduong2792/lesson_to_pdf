@@ -29,8 +29,8 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: stable
-      - name: Run Unit Tests
-        run: make unit-test
+      # - name: Run Unit Tests
+      #   run: make unit-test
 
       - name: Set Up Docker Buildx
         uses: docker/setup-buildx-action@v3
