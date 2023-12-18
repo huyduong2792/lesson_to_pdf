@@ -45,4 +45,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: huyduong2792/lesson_to_pdf:latest
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
