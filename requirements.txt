@@ -3,3 +3,14 @@ fastapi==0.105.0
 uvicorn==0.24.0.post1
 pytest==7.4.3
 requests==2.31.0
+motor==3.3.1
+    # via -r requirements.in
+pydantic==2.4.2
+    # via
+    #   -r requirements.in
+    #   fastapi
+    #   pydantic
+pydantic-core==2.10.1
+    # via pydantic
+pymongo==4.5.0
+    # via motor
