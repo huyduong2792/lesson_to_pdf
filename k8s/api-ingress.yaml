@@ -1,0 +1,54 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: nginx
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: nginx
+#   template:
+#     metadata:
+#       labels:
+#         app: nginx
+#     spec:
+#       containers:
+#         - image: nginx
+#           name: nginx
+#           ports:
+#             - containerPort: 80
+#           volumeMounts:
+#             - mountPath: /etc/nginx
+#               readOnly: true
+#               name: nginx-conf
+#             - mountPath: /var/log/nginx
+#               name: log
+#       volumes:
+#       - name: nginx-conf
+#         configMap:
+#           name: nginx-conf # place ConfigMap `nginx-conf` on /etc/nginx
+#           items:
+#             - key: nginx.conf
+#               path: nginx.conf
+#             - key: virtualhost.conf
+#               path: virtualhost/virtualhost.conf
+#       - name: log
+#         emptyDir: {}
+# ---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: name-virtual-host-ingress
+spec:
+  rules:
+  - host: foo.bar.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: service1
+            port:
+              number: 80
