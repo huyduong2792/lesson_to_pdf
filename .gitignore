@@ -6,4 +6,3 @@
 Pipfile.lock
 test/*
 .*
-k8s/mongodb-secrets.yaml
