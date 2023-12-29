@@ -1,1 +1,2 @@
 k8s/mongodb-secrets.yaml
+*.pyc
