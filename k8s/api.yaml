@@ -34,11 +34,9 @@ spec:
                   name: mongo-creds
                   key: password
             - name: MONGODB_HOST
-              value: "10.93.69.118"
-            - name: MONGODB_PORT
-              value: 27017
+              value: "ltp-test-mongo.rdrypzt.mongodb.net"
             - name: MONGODB_NAME
-              value: ltp
+              value: "ltp"
 ---
 apiVersion: v1
 kind: Service
