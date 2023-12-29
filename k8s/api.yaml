@@ -18,7 +18,7 @@ spec:
         - name: api
           image: ghcr.io/huyduong2792/lesson_to_pdf:main
           command: ["uvicorn"]
-          args: ["app.main:app", "--port=8000", "--host", "0.0.0.0"]
+          args: ["app:app", "--port=8000", "--host", "0.0.0.0"]
           ports:
             - containerPort: 8000
           imagePullPolicy: Always

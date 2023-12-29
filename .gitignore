@@ -1,2 +1,8 @@
-k8s/mongodb-secrets.yaml
+.idea/*
+.*.sw?
 *.pyc
+*.pyo
+.vscode
+Pipfile.lock
+test/*
+.*
